@@ -5,7 +5,7 @@
             :src="img.url"
             :alt="img.name"
             :key="index"
-            class="rounded h-8 mr-2"
+            class="rounded h-10 mr-2"
         >
     </span>
 </template>
