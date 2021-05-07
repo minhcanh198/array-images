@@ -24,7 +24,7 @@
                 {{ firstError }}
             </p>
             <div class="flex flex-col pt-8 text-center">
-                <!-- <div v-for="(img, index) in images" class="w-1/2 p-2 mb-4 rounded shadow-lg">
+                <div v-viewer v-for="(img, index) in images" :key="index" class="w-1/2 p-2 mb-4 rounded shadow-lg" >
                     <p><img
                         :src="img.url"
                         :alt="img.name"
@@ -39,7 +39,7 @@
                         </svg>
                         delete
                     </a>
-                </div> -->
+                </div>
             </div>
         </template>
     </default-field>
