@@ -8,18 +8,18 @@
             :name="field.name"
             v-model="value"
             >
-            <input
+            <!-- <input
                 class="hidden"
                 type="file"
                 ref="add_image"
                 @change="fileSelected"
                 multiple
-            />
-            <button
+            /> -->
+            <!-- <button
                 type="button"
                 class="bg-primary hover:bg-primary-dark text-white font-bold py-2 px-4 rounded"
                 @click="$refs.add_image.click()"
-            >Upload Image</button>
+            >Upload Image</button> -->
             <p v-if="hasError" class="my-2 text-danger">
                 {{ firstError }}
             </p>
