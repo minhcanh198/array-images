@@ -1,6 +1,7 @@
 <?php
 namespace Halimtuhu\ArrayImages;
 
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Http\Request;
@@ -26,7 +27,7 @@ class FieldController extends BaseController
                 ->putFile($path, $image);
 
             $data[] = [
-                'image' => $savedImage,
+                'name' => $savedImage,
                 'url' => Storage::disk($disk)->url($savedImage),
             ];
         }
@@ -34,10 +35,10 @@ class FieldController extends BaseController
         return $data;
     }
 
-    public function delete($image)
+    public function delete(Request $request)
     {
+        $image = $request->get('image');
         Storage::delete($image);
-
-        return "success";
+        return Response::json(['message' => $image . ' was deleted successfully.' ]);
     }
 }
